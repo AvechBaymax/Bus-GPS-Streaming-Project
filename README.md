@@ -133,3 +133,15 @@ python src/kafka/producer.py data/samples/sample_medium_test.csv
 ## 📄 **License**
 
 MIT License - see LICENSE file for details.
+
+# Open container bash
+
+docker exec -it first_project-kafka-1 bash
+
+# Create topic
+
+ocker exec first_project-kafka-1 kafka-topics --create --topic bus-gps-tracking --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
+
+# Describe topic
+
+docker exec first_project-kafka-1 kafka-topics --describe --topic bus-gps-tracking --bootstrap-server localhost:9092
